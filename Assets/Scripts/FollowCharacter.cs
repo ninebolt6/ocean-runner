@@ -10,7 +10,7 @@ public class FollowCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        character = GameObject.Find("Character");
+        character = GameObject.Find("Character2D");
         charTransform = character.transform;
     }
 

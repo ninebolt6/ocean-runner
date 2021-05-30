@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     private bool grounded;
     public float JumpPower;
     public float MoveSpeed;
@@ -12,24 +12,25 @@ public class CharacterMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        rb.AddForce(Vector3.right * MoveSpeed);
-        if(grounded) {
+    {    
+        rb.velocity = new Vector2(MoveSpeed, rb.velocity.y);
+        if(grounded)
+        {
             if(Input.GetKeyDown(KeyCode.W))
             {
                 grounded = false;
-                rb.AddForce(Vector3.up * JumpPower);
+                rb.AddForce(Vector2.up * JumpPower);
                 Debug.Log("Jump!");
             }
         }
     }
 
-    void OnCollisionEnter(Collision collisionInfo)
+    void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         if(collisionInfo.gameObject.tag == "Ground")
         {

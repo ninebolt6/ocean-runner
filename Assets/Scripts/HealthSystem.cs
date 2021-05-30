@@ -14,7 +14,7 @@ public class HealthSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        character = GameObject.Find("Character");
+        character = GameObject.Find("Character2D");
         heart = GameObject.Find("UI_Heart").GetComponent<SpriteRenderer>();
         health = HeartSprite.Length - 1;
     }
@@ -51,10 +51,11 @@ public class HealthSystem : MonoBehaviour
         heart.sprite = HeartSprite[health];
     }
  
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Obstacle")
         {
+            Debug.Log("Hit!");
             TakeDamage(1);
         }
 
