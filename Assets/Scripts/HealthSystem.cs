@@ -42,8 +42,10 @@ public class HealthSystem : MonoBehaviour
 
     public void Heal(int amount)
     {
-        health += amount;
-        UpdateHealth();
+        if(health < 3) {
+            health += amount;
+            UpdateHealth();
+        }
     }
 
     void UpdateHealth()
