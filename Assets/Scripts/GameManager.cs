@@ -27,7 +27,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     public void Heal(int amount)
     {
-        if(health < MaxHealth)
+        if((health + amount) <= MaxHealth)
         {
             health += amount;
             UpdateHealthSprite();

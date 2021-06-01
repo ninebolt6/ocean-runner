@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool grounded;
+    private bool canDoubleJump;
     public float JumpPower;
     public float MoveSpeed;
 
@@ -19,13 +20,20 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {    
         rb.velocity = new Vector2(MoveSpeed, rb.velocity.y);
-        if(grounded)
+        if(Input.GetKeyDown(KeyCode.W))
         {
-            if(Input.GetKeyDown(KeyCode.W))
+            if(grounded)
             {
                 grounded = false;
                 rb.AddForce(Vector2.up * JumpPower);
                 Debug.Log("Jump!");
+            }
+            else if(canDoubleJump)
+            {
+                canDoubleJump = false;
+                rb.velocity = new Vector2(rb.velocity.x, (JumpPower/50));
+                //rb.AddForce(Vector2.up * JumpPower);
+                Debug.Log("Double Jump!");
             }
         }
     }
@@ -35,6 +43,7 @@ public class CharacterMovement : MonoBehaviour
         if(collisionInfo.gameObject.tag == "Ground")
         {
             grounded = true;
+            canDoubleJump = true;
             Debug.Log("Grounded!");
         }
     }

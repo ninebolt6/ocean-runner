@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HealthSystem : MonoBehaviour
 {
     public Sprite[] HeartSprite;
+    public int MaxHealth;
     private int health;
     private GameObject character;
     private SpriteRenderer heart;
@@ -16,7 +17,7 @@ public class HealthSystem : MonoBehaviour
     {
         character = GameObject.Find("Character2D");
         heart = GameObject.Find("UI_Heart").GetComponent<SpriteRenderer>();
-        health = HeartSprite.Length - 1;
+        health = MaxHealth;
     }
 
     // Update is called once per frame
@@ -42,7 +43,8 @@ public class HealthSystem : MonoBehaviour
 
     public void Heal(int amount)
     {
-        if(health < 3) {
+        if((health + amount) <= MaxHealth)
+        {
             health += amount;
             UpdateHealth();
         }
