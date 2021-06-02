@@ -5,13 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject gameOverCanvas;
     public Sprite[] HeartSprite;
     public int MaxHealth;
     private int health;
     private GameObject character;
     private SpriteRenderer heart;
-    private bool dead;
+    private bool dead = false;
     
+    void Awake()
+    {
+        gameOverCanvas.SetActive(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +32,7 @@ public class HealthSystem : MonoBehaviour
     {
         if(dead)
         {
-            Debug.Log("GAME OVER!");
+            // 必要ない？
         }
     }
     
@@ -37,7 +44,9 @@ public class HealthSystem : MonoBehaviour
         if(health <= 0)
         {
             dead = true;
-            SceneManager.LoadScene("StartMenuScene");
+            Time.timeScale = 0.0f;
+            gameOverCanvas.SetActive(true);
+            Debug.Log("GAME OVER!");
         }
     }
 
@@ -53,6 +62,18 @@ public class HealthSystem : MonoBehaviour
     void UpdateHealth()
     {
         heart.sprite = HeartSprite[health];
+    }
+
+    public void Retry()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("MapScene");
+    }
+
+    public void ReturnToTitle()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("StartMenuScene");
     }
  
     void OnTriggerEnter2D(Collider2D other)

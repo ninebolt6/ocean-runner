@@ -27,6 +27,26 @@ MonoBehaviour:
     m_Key: Life
     m_Metadata:
       m_Items: []
+  - m_Id: 8533671776112640
+    m_Key: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8535348927287296
+    m_Key: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8535447023669248
+    m_Key: ReturnToTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8552719507279872
+    m_Key: GameOver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8552776398819328
+    m_Key: Retry
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
