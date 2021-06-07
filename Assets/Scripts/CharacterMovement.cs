@@ -5,8 +5,10 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private bool grounded;
-    private bool canDoubleJump;
+    private bool grounded = false;
+    private bool canDoubleJump = false;
+    private bool canDown = false;
+    private Collider2D downCollision;
     public float JumpPower;
     public float MoveSpeed;
 
@@ -41,15 +43,26 @@ public class CharacterMovement : MonoBehaviour
         }
 
         // すり抜ける床判定
-
         // もしも キーボードのS が押されたら
+        if(Input.GetKeyDown(KeyCode.S))
+        {
             // もしも すり抜け可能フラッグがtrueだったら
-            // すり抜ける処理
+            if(canDown)
+            {
+                // すり抜ける処理
+                if(downCollision != null)
+                {
+                    downCollision.enabled = false;
+                    downCollision = null;
+                }
+                canDown = false;
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        if(collisionInfo.gameObject.tag == "Ground")
+        if(collisionInfo.gameObject.tag == "Ground" || collisionInfo.gameObject.tag == "DownGround")
         {
             grounded = true;
             canDoubleJump = true;
@@ -57,9 +70,21 @@ public class CharacterMovement : MonoBehaviour
         }
 
         // もしも「すり抜けられるタグ」が付いたコリジョンに入ったら
+        if(collisionInfo.gameObject.tag == "DownGround")
+        {
             // すり抜け可能フラッグをtrueに
+            canDown = true;
+            downCollision = collisionInfo.collider;
+        }
     }
 
     // もしも「すり抜けられるタグ」が付いたコリジョンから出たら
-        // すり抜け可能フラッグをfalseに
+    void OnCollisionExit2D(Collision2D collisionInfo)
+    {
+        if(collisionInfo.gameObject.tag == "DownGround")
+        {
+            // すり抜け可能フラッグをfalseに
+            canDown = false;
+        }
+    }
 }
