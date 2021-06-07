@@ -23,4 +23,6 @@ public class FollowCharacter : MonoBehaviour
     {
         transform.position = new Vector3(charTransform.position.x, transform.position.y, transform.position.z);
     }
+
+    
 }
