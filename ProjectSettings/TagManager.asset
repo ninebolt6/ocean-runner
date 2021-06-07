@@ -9,7 +9,6 @@ TagManager:
   - Heart
   - Coin
   - DownGround
-  - CameraOffsetChange
   layers:
   - Default
   - TransparentFX
