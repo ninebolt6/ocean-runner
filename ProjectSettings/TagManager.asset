@@ -9,6 +9,8 @@ TagManager:
   - Heart
   - Coin
   - DownGround
+  - Treasure
+  - Void
   layers:
   - Default
   - TransparentFX
