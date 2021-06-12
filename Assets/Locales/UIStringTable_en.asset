@@ -50,5 +50,25 @@ MonoBehaviour:
     m_Localized: Retry
     m_Metadata:
       m_Items: []
+  - m_Id: 12149331522293760
+    m_Localized: Character Select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12151059646844928
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12193904034385920
+    m_Localized: BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12193928214548480
+    m_Localized: SE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12194961514893312
+    m_Localized: Volume
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

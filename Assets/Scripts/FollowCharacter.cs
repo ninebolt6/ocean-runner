@@ -7,6 +7,10 @@ public class FollowCharacter : MonoBehaviour
 {
     private GameObject character;
     private Transform charTransform;
+
+    public float yMargin = 0.8f;
+    public float ySmooth = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +23,23 @@ public class FollowCharacter : MonoBehaviour
         MoveCamera();
     }
 
+    private bool CheckYMargin()
+    {
+        return Mathf.Abs(transform.position.y - charTransform.position.y) > yMargin;
+    }
+
     void MoveCamera()
     {
-        transform.position = new Vector3(charTransform.position.x, transform.position.y, transform.position.z);
+        float targetY = transform.position.y;
+
+        if(CheckYMargin())
+        {
+            Debug.Log("true!" + Time.deltaTime);
+            targetY = Mathf.Lerp(transform.position.y, charTransform.position.y, ySmooth*Time.deltaTime);
+        }
+
+        transform.position = new Vector3(charTransform.position.x, targetY, transform.position.z);
     }
+
+
 }

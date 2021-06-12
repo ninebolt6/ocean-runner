@@ -89,5 +89,11 @@ public class HealthSystem : MonoBehaviour
             Heal(1);
             Destroy(other.gameObject);
         }
+
+        if(other.gameObject.tag == "Void")
+        {
+            TakeDamage(health);
+            Debug.Log("Void dead");
+        }
     }
 }

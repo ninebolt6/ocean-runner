@@ -6,6 +6,8 @@ using TMPro;
 public class ScoreSystem : MonoBehaviour
 {
     public TextMeshProUGUI ScoreText;
+    public int CoinScore;
+    public int TreasureScore;
     private int score;
 
     // Start is called before the first frame update
@@ -20,7 +22,16 @@ public class ScoreSystem : MonoBehaviour
         if(other.gameObject.tag == "Coin")
         {
             Debug.Log("Score get!");
-            score++;
+            score += CoinScore;
+            UpdateScore();
+            Destroy(other.gameObject);
+            // play sound?
+        }
+
+        if(other.gameObject.tag == "Treasure")
+        {
+            Debug.Log("Score get!");
+            score += TreasureScore;
             UpdateScore();
             Destroy(other.gameObject);
             // play sound?
