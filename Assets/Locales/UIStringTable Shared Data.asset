@@ -47,6 +47,26 @@ MonoBehaviour:
     m_Key: Retry
     m_Metadata:
       m_Items: []
+  - m_Id: 12149331522293760
+    m_Key: CharacterSelect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12151059646844928
+    m_Key: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12193904034385920
+    m_Key: BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12193928214548480
+    m_Key: SE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12194961514893312
+    m_Key: Volume
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

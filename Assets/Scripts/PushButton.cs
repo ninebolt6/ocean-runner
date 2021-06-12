@@ -4,10 +4,15 @@ using UnityEngine;
 
 using UnityEngine.SceneManagement;
 
-public class PushStartButton : MonoBehaviour
+public class PushButton : MonoBehaviour
 {
-    public void ButtonClick()
+    public void GameStart()
     {
         SceneManager.LoadScene("MapScene");
+    }
+
+    public void OpenCharaSelector()
+    {
+        Debug.Log("Selector open");
     }
 }
