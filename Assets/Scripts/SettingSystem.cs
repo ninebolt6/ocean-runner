@@ -15,7 +15,8 @@ public class SettingSystem : MonoBehaviour
     void Awake()
     {
         HideSettings();
-        if(LocalizationSettings.SelectedLocale.Identifier.CultureInfo.EnglishName == "Japanese")
+
+        if(LocalizationSettings.SelectedLocale.Identifier.CultureInfo.EnglishName == "English")
         {
             dropdown.value = 1;
         }
