@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
 using TMPro;
 
 public class SettingSystem : MonoBehaviour
@@ -30,6 +31,7 @@ public class SettingSystem : MonoBehaviour
     public void HideSettings()
     {
         settingsCanvas.enabled = false;
+        PlayerPrefs.Save();
     }
 
     public void LocaleSelected(int index)

@@ -8,7 +8,7 @@ public class PushButton : MonoBehaviour
 {
     public void GameStart()
     {
-        SceneManager.LoadScene("MapScene");
+        SceneManager.LoadScene("Map1Scene");
     }
 
     public void OpenCharaSelector()
