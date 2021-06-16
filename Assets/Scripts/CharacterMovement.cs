@@ -42,22 +42,27 @@ public class CharacterMovement : MonoBehaviour
             }
         }
 
+        if(canDown)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y - 10f);
+        }
+
         // すり抜ける床判定
         // もしも キーボードのS が押されたら
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            // もしも すり抜け可能フラッグがtrueだったら
-            if(canDown)
-            {
-                // すり抜ける処理
-                if(downCollision != null)
-                {
-                    downCollision.enabled = false;
-                    downCollision = null;
-                }
-                canDown = false;
-            }
-        }
+        // if(Input.GetKeyDown(KeyCode.S))
+        // {
+        //     // もしも すり抜け可能フラッグがtrueだったら
+        //     if(canDown)
+        //     {
+        //         // すり抜ける処理
+        //         if(downCollision != null)
+        //         {
+        //             downCollision.enabled = false;
+        //             downCollision = null;
+        //         }
+        //         canDown = false;
+        //     }
+        // }
     }
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
@@ -70,21 +75,30 @@ public class CharacterMovement : MonoBehaviour
         }
 
         // もしも「すり抜けられるタグ」が付いたコリジョンに入ったら
-        if(collisionInfo.gameObject.tag == "DownGround")
-        {
-            // すり抜け可能フラッグをtrueに
-            canDown = true;
-            downCollision = collisionInfo.collider;
-        }
+        // if(collisionInfo.gameObject.tag == "DownGround")
+        // {
+        //     // すり抜け可能フラッグをtrueに
+        //     canDown = true;
+        //     downCollision = collisionInfo.collider;
+        // }
     }
 
     // もしも「すり抜けられるタグ」が付いたコリジョンから出たら
-    void OnCollisionExit2D(Collision2D collisionInfo)
+    // void OnCollisionExit2D(Collision2D collisionInfo)
+    // {
+    //     if(collisionInfo.gameObject.tag == "DownGround")
+    //     {
+    //         // すり抜け可能フラッグをfalseに
+    //         canDown = false;
+    //     }
+    // }
+
+    void OnTriggerStay2D(Collider2D other)
     {
-        if(collisionInfo.gameObject.tag == "DownGround")
+        if(other.gameObject.tag == "DownGround")
         {
-            // すり抜け可能フラッグをfalseに
-            canDown = false;
+            rb.AddForce(new Vector2(0, -20f));
+            Debug.Log("DOWN!");
         }
     }
 }
