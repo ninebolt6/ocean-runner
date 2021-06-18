@@ -67,7 +67,7 @@ public class HealthSystem : MonoBehaviour
     public void Retry()
     {
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("MapScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ReturnToTitle()
