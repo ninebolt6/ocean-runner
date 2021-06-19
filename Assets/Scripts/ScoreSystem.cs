@@ -8,6 +8,8 @@ public class ScoreSystem : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     public int CoinScore;
     public int TreasureScore;
+    public int OnigiriScore;
+    public int RubyScore;
     private int score;
 
     // Start is called before the first frame update
@@ -32,6 +34,24 @@ public class ScoreSystem : MonoBehaviour
         {
             Debug.Log("Score get!");
             score += TreasureScore;
+            UpdateScore();
+            Destroy(other.gameObject);
+            // play sound?
+        }
+
+        if(other.gameObject.tag == "Onigiri")
+        {
+            Debug.Log("Score get!");
+            score += OnigiriScore;
+            UpdateScore();
+            Destroy(other.gameObject);
+            // play sound?
+        }
+
+        if(other.gameObject.tag == "Ruby")
+        {
+            Debug.Log("Score get!");
+            score += RubyScore;
             UpdateScore();
             Destroy(other.gameObject);
             // play sound?

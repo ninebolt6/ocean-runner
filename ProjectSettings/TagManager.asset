@@ -12,6 +12,8 @@ TagManager:
   - Treasure
   - Void
   - Goal
+  - Onigiri
+  - Ruby
   layers:
   - Default
   - TransparentFX

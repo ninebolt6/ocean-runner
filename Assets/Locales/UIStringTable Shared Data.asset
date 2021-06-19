@@ -71,6 +71,34 @@ MonoBehaviour:
     m_Key: Language
     m_Metadata:
       m_Items: []
+  - m_Id: 14427027075166208
+    m_Key: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14427067097214976
+    m_Key: Copyright
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14485053425512448
+    m_Key: MapSelect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14485258778636288
+    m_Key: HighScore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14489725188108288
+    m_Key: StageClear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14535852298006528
+    m_Key: PlayAgain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14536976006574080
+    m_Key: Score
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
