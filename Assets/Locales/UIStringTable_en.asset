@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 34a5f58ff116a084b8612881e424ddb5, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - id: 0
   m_TableData:
   - m_Id: 11475283968
     m_Localized: Ocean Runner
@@ -27,9 +28,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1385798683967488
-    m_Localized: Lives
+    m_Localized: Health
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - id: 0
   - m_Id: 8533671776112640
     m_Localized: Pause
     m_Metadata:
@@ -39,7 +41,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8535447023669248
-    m_Localized: Return to title menu
+    m_Localized: Return to the title screen
     m_Metadata:
       m_Items: []
   - m_Id: 8552719507279872
@@ -91,7 +93,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14489725188108288
-    m_Localized: Stage Clear
+    m_Localized: Stage Clear!
     m_Metadata:
       m_Items: []
   - m_Id: 14535852298006528
@@ -104,3 +106,7 @@ MonoBehaviour:
       m_Items: []
   references:
     version: 1
+    00000000:
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00c0496660ec0400
