@@ -20,6 +20,12 @@ public class PauseSystem : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
+    public void Retry()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void ReturnToTitle()
     {
         SceneManager.LoadScene("StartMenuScene");
