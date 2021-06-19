@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-	private PlayerController thePlayer;
+	//private PlayerController thePlayer;
 	public GameObject death;
 
 	public float speed = 0.3f;
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		thePlayer = FindObjectOfType<PlayerController> ();	
+		//thePlayer = FindObjectOfType<PlayerController> ();	
 		myRigidbody = GetComponent<Rigidbody2D> ();
 
 		turnTimer = 0;
@@ -45,10 +45,10 @@ public class Enemy : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 
-		if(other.tag == "Player" && thePlayer.rushing){
-			Instantiate (death, gameObject.transform.position, gameObject.transform.rotation);
-			Destroy (gameObject);
-		}
+		// if(other.tag == "Player" && thePlayer.rushing){
+		// 	Instantiate (death, gameObject.transform.position, gameObject.transform.rotation);
+		// 	Destroy (gameObject);
+		// }
 
 	}
 
