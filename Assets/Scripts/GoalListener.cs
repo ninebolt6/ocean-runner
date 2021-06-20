@@ -26,6 +26,7 @@ public class GoalListener : MonoBehaviour
         if(collisionInfo.gameObject.tag == "Goal")
         {
             Debug.Log("GOAL!");
+            Time.timeScale = 0.0f;
             int score;
             bool isParsed = int.TryParse(scoreString.text, out score);
 
@@ -42,6 +43,7 @@ public class GoalListener : MonoBehaviour
 
     public void PlayAgain()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

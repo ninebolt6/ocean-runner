@@ -13,9 +13,12 @@ TextureImporter:
     second: map2_tile_2
   - first:
       213: 6760614521508146821
-    second: map2_tile_3
+    second: map2_tile_2
   - first:
       213: -7064312895080124192
+    second: map2_tile_3
+  - first:
+      213: 5118839388269390893
     second: map2_tile_4
   externalObjects: {}
   serializedVersion: 11
@@ -135,10 +138,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 128
-        width: 170.66667
+        width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,12 +157,12 @@ TextureImporter:
       name: map2_tile_1
       rect:
         serializedVersion: 2
-        x: 170
+        x: 128
         y: 128
-        width: 170.66667
+        width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,33 +178,12 @@ TextureImporter:
       name: map2_tile_2
       rect:
         serializedVersion: 2
-        x: 340
+        x: 384
         y: 128
-        width: 170.66667
+        width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 395a670bd0bc18600800000000000000
-      internalID: 468879095878821267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: map2_tile_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 170.66667
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -214,15 +196,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: map2_tile_4
+      name: map2_tile_3
       rect:
         serializedVersion: 2
-        x: 340
+        x: 0
         y: 0
-        width: 170.66667
+        width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,6 +212,27 @@ TextureImporter:
       bones: []
       spriteID: 0e0b98aa9d486fd90800000000000000
       internalID: -7064312895080124192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map2_tile_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c23188d45c90740800000000000000
+      internalID: 5118839388269390893
       vertices: []
       indices: 
       edges: []

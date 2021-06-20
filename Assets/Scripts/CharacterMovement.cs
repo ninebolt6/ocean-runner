@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public float JumpPower;
+    public float MoveSpeed;
+    public AudioClip jump_sound;
+
     private Rigidbody2D rb;
     private bool grounded = false;
     private bool canDoubleJump = false;
     private bool canDown = false;
     private Collider2D downCollision;
-    public float JumpPower;
-    public float MoveSpeed;
+    [SerializeField]
+    private AudioSource audio_source;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +35,14 @@ public class CharacterMovement : MonoBehaviour
             {
                 grounded = false;
                 rb.AddForce(Vector2.up * JumpPower);
+                audio_source.PlayOneShot(jump_sound);
                 Debug.Log("Jump!");
             }
             else if(canDoubleJump)
             {
                 canDoubleJump = false;
                 rb.velocity = new Vector2(rb.velocity.x, (JumpPower/50));
+                audio_source.PlayOneShot(jump_sound);
                 //rb.AddForce(Vector2.up * JumpPower);
                 Debug.Log("Double Jump!");
             }
