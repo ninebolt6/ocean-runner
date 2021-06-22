@@ -9,8 +9,7 @@ public class CharacterMovement : MonoBehaviour
     public AudioClip jump_sound;
 
     private Rigidbody2D rb;
-    private bool grounded = false;
-    private bool canDoubleJump = false;
+    private GroundCheck ground;
     private bool canDown = false;
     private Collider2D downCollision;
     [SerializeField]
@@ -20,6 +19,7 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ground = GetComponentInChildren<GroundCheck>();
     }
 
     // Update is called once per frame
@@ -31,20 +31,23 @@ public class CharacterMovement : MonoBehaviour
         // jump
         if(Input.GetKeyDown(KeyCode.W))
         {
-            if(grounded)
+            if(Time.timeScale != 0.0f)
             {
-                grounded = false;
-                rb.AddForce(Vector2.up * JumpPower);
-                audio_source.PlayOneShot(jump_sound);
-                Debug.Log("Jump!");
-            }
-            else if(canDoubleJump)
-            {
-                canDoubleJump = false;
-                rb.velocity = new Vector2(rb.velocity.x, (JumpPower/50));
-                audio_source.PlayOneShot(jump_sound);
-                //rb.AddForce(Vector2.up * JumpPower);
-                Debug.Log("Double Jump!");
+                if(ground.isGrounded)
+                {
+                    ground.isGrounded = false;
+                    rb.AddForce(Vector2.up * JumpPower);
+                    audio_source.PlayOneShot(jump_sound);
+                    Debug.Log("Jump!");
+                }
+                else if(ground.canDoubleJump)
+                {
+                    ground.canDoubleJump = false;
+                    rb.velocity = new Vector2(rb.velocity.x, (JumpPower/50));
+                    audio_source.PlayOneShot(jump_sound);
+                    //rb.AddForce(Vector2.up * JumpPower);
+                    Debug.Log("Double Jump!");
+                }
             }
         }
 
@@ -73,13 +76,6 @@ public class CharacterMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        if(collisionInfo.gameObject.tag == "Ground" || collisionInfo.gameObject.tag == "DownGround")
-        {
-            grounded = true;
-            canDoubleJump = true;
-            Debug.Log("Grounded!");
-        }
-
         // もしも「すり抜けられるタグ」が付いたコリジョンに入ったら
         // if(collisionInfo.gameObject.tag == "DownGround")
         // {

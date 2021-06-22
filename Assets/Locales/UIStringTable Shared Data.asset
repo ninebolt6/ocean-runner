@@ -99,6 +99,10 @@ MonoBehaviour:
     m_Key: Score
     m_Metadata:
       m_Items: []
+  - m_Id: 15987570898563072
+    m_Key: Jump
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

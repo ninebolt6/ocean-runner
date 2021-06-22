@@ -5,14 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject gameOverCanvas;
     public Sprite[] HeartSprite;
     public int MaxHealth;
+    public AudioClip heal_sound;
+    public AudioClip fall_sound;
+    public AudioClip damage_sound;
+
+    [SerializeField]
+    private GameObject gameOverCanvas;
     private int health;
     private GameObject character;
     private SpriteRenderer heart;
-    private bool dead = false;
+    [SerializeField]
+    private AudioSource audio_source;
     
     void Awake()
     {
@@ -26,15 +31,6 @@ public class HealthSystem : MonoBehaviour
         heart = GameObject.Find("UI_Heart").GetComponent<SpriteRenderer>();
         health = MaxHealth;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(dead)
-        {
-            // 必要ない？
-        }
-    }
     
     public void TakeDamage(int damage)
     {
@@ -43,7 +39,6 @@ public class HealthSystem : MonoBehaviour
 
         if(health <= 0)
         {
-            dead = true;
             Time.timeScale = 0.0f;
             gameOverCanvas.SetActive(true);
             Debug.Log("GAME OVER!");
@@ -78,21 +73,25 @@ public class HealthSystem : MonoBehaviour
  
     void OnTriggerEnter2D(Collider2D other)
     {
+        
         if(other.gameObject.tag == "Obstacle")
         {
             Debug.Log("Hit!");
+            audio_source.PlayOneShot(damage_sound);
             TakeDamage(1);
         }
 
         if(other.gameObject.tag == "Heart")
         {
             Heal(1);
+            audio_source.PlayOneShot(heal_sound);
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "Void")
         {
             TakeDamage(health);
+            audio_source.PlayOneShot(fall_sound);
             Debug.Log("Void dead");
         }
     }

@@ -8,13 +8,15 @@ public class PauseListener : MonoBehaviour
     private GameObject pauseCanvas;
     [SerializeField]
     private GameObject gameoverCanvas;
+    [SerializeField]
+    private GameObject clearCanvas;
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!gameoverCanvas.activeSelf)
+            if(!gameoverCanvas.activeSelf && !clearCanvas.activeSelf)
             {
                 pauseCanvas.SetActive(!pauseCanvas.activeSelf);
 
