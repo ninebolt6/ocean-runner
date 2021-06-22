@@ -6,10 +6,10 @@ public class GroundCheck : MonoBehaviour
 {
     public bool isGrounded = false;
     public bool canDoubleJump = false;
-    // Start is called before the first frame update
-    void OnCollisionEnter2D(Collision2D collisionInfo)
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(collisionInfo.gameObject.tag == "Ground" || collisionInfo.gameObject.tag == "DownGround")
+        if(other.gameObject.tag == "Ground" || other.gameObject.tag == "DownGround")
         {
             isGrounded = true;
             canDoubleJump = true;
