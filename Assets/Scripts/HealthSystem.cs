@@ -18,7 +18,6 @@ public class HealthSystem : MonoBehaviour
     private SpriteRenderer heart;
     [SerializeField]
     private AudioSource audio_source;
-    
     void Awake()
     {
         gameOverCanvas.SetActive(false);
