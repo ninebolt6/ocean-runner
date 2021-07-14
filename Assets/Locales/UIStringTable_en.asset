@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 11475283968
-    m_Localized: ScrollRunner
+    m_Localized: OCEAN RUNNER
     m_Metadata:
       m_Items: []
   - m_Id: 544617459712
@@ -27,11 +27,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1385798683967488
-    m_Localized: Lives
+    m_Localized: Health
     m_Metadata:
       m_Items: []
   - m_Id: 8533671776112640
-    m_Localized: Pause
+    m_Localized: PAUSE
     m_Metadata:
       m_Items: []
   - m_Id: 8535348927287296
@@ -39,11 +39,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8535447023669248
-    m_Localized: Return to title
+    m_Localized: Return to title screen
     m_Metadata:
       m_Items: []
   - m_Id: 8552719507279872
-    m_Localized: Game Over
+    m_Localized: GAME OVER
     m_Metadata:
       m_Items: []
   - m_Id: 8552776398819328
@@ -68,6 +68,42 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 12194961514893312
     m_Localized: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12552591273955328
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14427027075166208
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14427067097214976
+    m_Localized: Copyright
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14485053425512448
+    m_Localized: Select a map
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14485258778636288
+    m_Localized: High Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14489725188108288
+    m_Localized: Stage Clear!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14535852298006528
+    m_Localized: Play again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14536976006574080
+    m_Localized: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15987570898563072
+    m_Localized: (Double) Jump
     m_Metadata:
       m_Items: []
   references:

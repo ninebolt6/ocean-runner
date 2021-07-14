@@ -19,19 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 11475283968
-    m_Localized: ScrollRunner
+    m_Localized: OCEAN RUNNER
     m_Metadata:
       m_Items: []
   - m_Id: 544617459712
-    m_Localized: "\u30B9\u30BF\u30FC\u30C8"
+    m_Localized: Play
     m_Metadata:
       m_Items: []
   - m_Id: 1385798683967488
-    m_Localized: "\u6B8B\u6A5F"
+    m_Localized: "\u4F53\u529B"
     m_Metadata:
       m_Items: []
   - m_Id: 8533671776112640
-    m_Localized: "\u4E00\u6642\u505C\u6B62"
+    m_Localized: PAUSE
     m_Metadata:
       m_Items: []
   - m_Id: 8535348927287296
@@ -43,7 +43,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8552719507279872
-    m_Localized: "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+    m_Localized: GAME OVER
     m_Metadata:
       m_Items: []
   - m_Id: 8552776398819328
@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 12151059646844928
-    m_Localized: "\u8A2D\u5B9A"
+    m_Localized: Settings
     m_Metadata:
       m_Items: []
   - m_Id: 12193904034385920
@@ -68,6 +68,42 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 12194961514893312
     m_Localized: "\u97F3\u91CF"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12552591273955328
+    m_Localized: "\u8A00\u8A9E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14427027075166208
+    m_Localized: "\u30AF\u30EC\u30B8\u30C3\u30C8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14427067097214976
+    m_Localized: "\u6A29\u5229\u8868\u8A18"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14485053425512448
+    m_Localized: "\u30DE\u30C3\u30D7\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14485258778636288
+    m_Localized: "\u6700\u9AD8\u30B9\u30B3\u30A2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14489725188108288
+    m_Localized: "\u30B9\u30C6\u30FC\u30B8\u30AF\u30EA\u30A2!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14535852298006528
+    m_Localized: "\u3082\u3046\u4E00\u5EA6\u30D7\u30EC\u30A4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14536976006574080
+    m_Localized: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15987570898563072
+    m_Localized: "(\u30C0\u30D6\u30EB)\u30B8\u30E3\u30F3\u30D7"
     m_Metadata:
       m_Items: []
   references:

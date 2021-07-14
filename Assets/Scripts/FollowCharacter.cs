@@ -34,7 +34,6 @@ public class FollowCharacter : MonoBehaviour
 
         if(CheckYMargin())
         {
-            Debug.Log("true!" + Time.deltaTime);
             targetY = Mathf.Lerp(transform.position.y, charTransform.position.y, ySmooth*Time.deltaTime);
         }
 

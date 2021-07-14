@@ -8,6 +8,14 @@ public class ScoreSystem : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     public int CoinScore;
     public int TreasureScore;
+    public int OnigiriScore;
+    public int RubyScore;
+    public AudioClip coin_one;
+    public AudioClip coin_two;
+    public AudioClip coin_three;
+
+    [SerializeField]
+    private AudioSource audio_source;
     private int score;
 
     // Start is called before the first frame update
@@ -25,7 +33,8 @@ public class ScoreSystem : MonoBehaviour
             score += CoinScore;
             UpdateScore();
             Destroy(other.gameObject);
-            // play sound?
+            // play sound
+            audio_source.PlayOneShot(coin_one);
         }
 
         if(other.gameObject.tag == "Treasure")
@@ -34,7 +43,28 @@ public class ScoreSystem : MonoBehaviour
             score += TreasureScore;
             UpdateScore();
             Destroy(other.gameObject);
-            // play sound?
+            // play sound
+            audio_source.PlayOneShot(coin_one);
+        }
+
+        if(other.gameObject.tag == "Onigiri")
+        {
+            Debug.Log("Score get!");
+            score += OnigiriScore;
+            UpdateScore();
+            Destroy(other.gameObject);
+            // play sound
+            audio_source.PlayOneShot(coin_two);
+        }
+
+        if(other.gameObject.tag == "Ruby")
+        {
+            Debug.Log("Score get!");
+            score += RubyScore;
+            UpdateScore();
+            Destroy(other.gameObject);
+            // play sound
+            audio_source.PlayOneShot(coin_three);
         }
     }
 
