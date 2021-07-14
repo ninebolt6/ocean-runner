@@ -50,6 +50,7 @@ public class GoalListener : MonoBehaviour
     public void ReturnToTitle()
     {
         SceneManager.LoadScene("StartMenuScene");
+        Time.timeScale = 1.0f;
     }
 
     public void SetScoreText(int score)
