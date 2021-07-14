@@ -7,6 +7,11 @@ TagManager:
   - Ground
   - Obstacle
   - Heart
+  - Coin
+  - DownGround
+  - Treasure
+  - Void
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -14,9 +19,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Field
+  - Midground
+  - Background
   - 
   - 
   - 
